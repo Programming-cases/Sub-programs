@@ -1,0 +1,15 @@
+def det(M):
+    if len(M[0])==2 and len(M)==2:
+        determinante= M[0][0]*M[1][1]-M[1][0]*M[0][1]
+    else:
+        determinante=0
+        for j in range(len(M)):
+            posiciones=[]
+            for k in range(len(M)):
+                if k != j:
+                    posiciones.append(k)
+            m=[]
+            for fila in range(1,len(M)):
+                m.append([M[p][fila] for p in posiciones])
+            determinante += M[j][0]*pow(-1,j+2)*det(m)
+    return determinante   
