@@ -1,0 +1,4 @@
+Tmatrix = def(M):
+          """it determines the transposed matrix from lists"""
+          tM = [[row[index] for row in M] for index in range(len(M[0])] 
+          return tM
